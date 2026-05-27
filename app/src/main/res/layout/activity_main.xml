@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".MainActivity">
+
+    <!-- Small label above the ring -->
+    <TextView
+        android:id="@+id/lblChronometre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:letterSpacing="0.2"
+        android:text="@string/label_chronometre"
+        android:textColor="#7F1734"
+        android:textSize="12sp"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/cpIndicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!-- Circular Progress Indicator Ring -->
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/cpIndicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:progress="0"
+        app:indicatorColor="#7F1734"
+        app:indicatorSize="240dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:trackColor="#F0E0E5"
+        app:trackThickness="10dp" />
+
+    <!-- Time displayed inside the ring -->
+    <TextView
+        android:id="@+id/tvTemps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/zero_time"
+        android:textColor="#1A1A1A"
+        android:textSize="48sp"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="@+id/cpIndicator"
+        app:layout_constraintEnd_toEndOf="@+id/cpIndicator"
+        app:layout_constraintStart_toStartOf="@+id/cpIndicator"
+        app:layout_constraintTop_toTopOf="@+id/cpIndicator" />
+
+    <!-- Control Buttons row -->
+    <LinearLayout
+        android:id="@+id/llButtons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/cpIndicator">
+
+        <!-- Reset Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnReset"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="24dp"
+            app:backgroundTint="#F5E8EB"
+            app:icon="@android:drawable/ic_menu_revert"
+            app:iconTint="#7F1734" />
+
+        <!-- Play/Start Button (Larger) -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStart"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            app:backgroundTint="#7F1734"
+            app:icon="@android:drawable/ic_media_play"
+            app:iconSize="32dp"
+            app:iconTint="#FFFFFF" />
+
+        <!-- Pause/Stop Button -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnStop"
+            style="@style/Widget.Material3.Button.IconButton"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="24dp"
+            app:backgroundTint="#F5E8EB"
+            app:icon="@android:drawable/ic_media_pause"
+            app:iconTint="#7F1734" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
