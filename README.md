@@ -24,7 +24,7 @@ L’application continue de fonctionner même lorsqu’elle est réduite et affi
 ## 🎥 Démo
 
 La vidéo de démonstration est disponible dans le projet :
-lab16/demo_lab16.mp4
+./demo_lab16.mp4
 ## 📂 Structure du projet
 
 ```text
